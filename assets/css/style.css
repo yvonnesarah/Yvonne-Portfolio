@@ -1,12 +1,5 @@
-* {
+*{
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  line-height: 1.5;
 }
 
 h1,
@@ -15,9 +8,102 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
+margin: 0;
 }
 
-p {
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
   margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+
+h1 {
+font-size: 48px;
+color: rgb(255, 255, 255);
+background-color: rgb(0,0,0);
+margin: 20px 0;
+padding: 0 5px 0 50px;
+}
+
+h2{
+font-size: 50px;
+text-align: end;
+/* Width:min-content will take the minimum width of the content and apply it */
+width: min-content;
+float: right;
+padding-right: 30px;
+color: rgb(27, 63, 64);
+}
+
+h3{
+font-size: 50px;
+}
+
+h4{
+font-size: 30px;
+color:rgb(251,239, 225);
+}
+
+span{
+color: rgb(251,239, 225);
+}
+
+footer{
+  background-color:rgb(27, 63, 64);
+  text-align: center;
+  padding: 10px;
+}
+
+
+
+/******************************************
+/* Header/Navigation
+/*******************************************/
+
+.header {
+  /* Understanding: we have given the header a flexbox which allows me to place all the text on the same line. Space-between lets me stick my name to the left and the nav to the right */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 0 0 ;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: rgb(137, 207, 240);
+}
+
+.nav {
+display: flex;
+justify-content: right;
+padding: 15px 0 15px 0;
+margin-right: 20px;
+font-size: 20px;
+}
+
+.nav ul {
+/* Understanding: new flexbox needed creating in order for me to give space between the lists */
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.nav ul li{
+  padding-left: 30px;
+}
+
+.nav > ul> li> a {
+color: rgb(255,255, 225);
+text-decoration: underline;
+text-underline-offset: 8px;
+}
+
+ /* a:hover allowed me to create the roll over effect on the nav bar */
+.nav > ul> li> a:hover{
+  background-color: rgb(251,239, 225);
+  color:rgb(27, 63, 64);
+  padding: 3px;
 }
