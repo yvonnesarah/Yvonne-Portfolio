@@ -38,7 +38,7 @@ text-align: end;
 width: min-content;
 float: right;
 padding-right: 30px;
-color: rgb(27, 63, 64);
+color: rgb(137, 207, 240);
 }
 
 h3{
@@ -47,15 +47,15 @@ font-size: 50px;
 
 h4{
 font-size: 30px;
-color:rgb(251,239, 225);
+color:rgb(255,255,255);
 }
 
 span{
-color: rgb(251,239, 225);
+color: rgb(255,255,255);
 }
 
 footer{
-  background-color:rgb(27, 63, 64);
+  background-color:rgb(137, 207, 240);
   text-align: center;
   padding: 10px;
 }
@@ -108,3 +108,276 @@ text-underline-offset: 8px;
   padding: 3px;
 }
 
+/******************************************
+/* Hero
+/*******************************************/
+
+.herobanner{
+  background-image: url(../../assets/images/banner-image.jpg);
+}
+
+/******************************************
+/* MAIN GRID
+/*******************************************/
+
+#mainGrid {
+  display: grid;
+  grid-template-rows: 200PX 1fr 200px;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+  "about about-content"
+  "work image"
+  "contact contact-info"
+  ;
+  gap: 40px;
+  padding: 20px;
+}
+
+#about {
+  grid-area: about;
+}
+
+#about-content{
+  grid-area: about-content;
+}
+
+#work {
+  grid-area: work;
+}
+
+
+#contact {
+  grid-area: contact;
+}
+
+#about, #work, #contact{
+  border-right: 4px solid rgb(137, 207, 240);
+}
+
+
+/* below is code for contact info */
+#contact-info{
+  grid-area: contact-info;
+  width: 100%;
+  padding: 0;
+  margin: auto;
+}
+
+#contact-info ul{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+}
+
+#contact-info > ul> li> a {
+  color: rgb(0,0,0);
+  text-decoration: underline;
+  text-underline-offset:8px;
+  font-weight: bold;
+}
+
+
+/******************************************
+/* PROJECT GRID
+/*******************************************/
+#workGrid {
+grid-area: image;
+  display: grid;
+  grid-template-rows: 300px 300px 300px 300px;
+  grid-template-columns: 50% 1fr;
+  grid-template-areas:
+  "P1 P1"
+  "P1 P1"
+  "P2 P3"
+  "P4 P5";
+  gap: 10px;
+  object-fit: cover;
+}
+
+#project1{
+  grid-area: P1;
+  background-image: url(../../assets/images/02-portfolio-1.jpg);
+}
+
+#project2{
+  grid-area: P2;
+  background-image: url(../../assets/images/horieon.jpg);
+}
+#project3{
+  grid-area: P3;
+  background-image: url(../../assets/images/02-portfolio-3.jpg);
+}
+#project4{
+  grid-area: P4;
+  background-image: url(../../assets/images/02-portfolio-4.jpg);
+}
+#project5{
+  grid-area: P5;
+  background-image: url(../../assets/images/02-run-buddy.jpg);
+}
+
+/* shows project grid styling  */
+
+#project1, #project2, #project3, #project4, #project5{
+  position: relative;
+  width: 100%;
+  border: 5px solid rgb(137, 207, 240);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-decoration: none;
+}
+
+.project-text{
+  background-color:rgb(0,0,0);
+  width: fit-content;
+  padding: 10px;
+  margin-bottom: 30px;
+  z-index: 2;
+}
+
+.style{
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  transition: all ease-in-out;
+}
+
+/* added a hover, tint and grow to the images in portfolio grid. */
+
+.overtint {
+  position:absolute;
+  background-color: rgba(27, 63, 64, 0.6);
+  width:100%; 
+  height:100%;
+}
+
+
+
+#project1> .overtint + div{
+  z-index: 2;
+}
+
+a:hover .overtint { 
+  opacity: 0;
+  transition-duration: .5s;
+}
+
+
+#workGrid a:hover{
+  transform: scale(1.01);
+}
+
+
+
+/******************************************
+/* Media Query
+/*******************************************/
+
+
+ @media only screen and (max-width: 1000px) {
+  
+
+/*________h1, h2, nav and herobanner ________*/
+  h1 {
+    font-size: 48px;
+    text-align: center;
+    color: rgb(0, 255, 0);
+    background-color: rgb(0,0, 0);
+    width: 100%;
+    margin-top: 0;
+    }
+	
+	 .header {
+    text-align: center;
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  .nav{
+     margin-bottom: 15px;
+  }
+
+  .nav ul {
+     flex-direction: row;
+     padding: 0;
+   }
+  
+ h2{
+    font-size: 50px;
+    text-align: center;
+    width: max-content;
+    float: none;
+    padding-right: 0;
+    color: rgb(0, 0, 0);    
+    }
+
+
+/* ________ Main grid ________ */
+
+  #mainGrid {
+     display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "about"
+    "about-content"
+    "work"
+    "image"
+    "contact"
+    "contact-info";
+    gap: 40px;
+    padding: 10px;
+  }
+  #about, #work, #contact{
+    border: none;
+    border-bottom: 4px solid rgb(0, 255, 0);
+  }
+/* ________ project grid ________ */
+
+  #workGrid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "P1"
+    "P2"
+    "P3"
+    "P4"
+    "P5";
+   }
+
+/* shows project grid styling  */    
+    #project1, #project2, #project3, #project4, #project5{
+      border: 5px solid rgb(0, 255, 0);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      text-decoration: none;
+    }
+   .project-text{
+      padding: 10px;
+      margin: 30px 0 15px 0;
+    }
+     
+	 /*________ contact ________*/
+
+
+    #contact-info{
+      text-align: left;
+      align-content: space-between;
+    }
+    
+    #contact-info ul{
+      flex-direction: column;
+      row-gap: 15px;
+    }
+  }
+
+
+  #contact-info > ul> li> a {
+    color: rgb(0, 0, 0);
+    text-underline-offset:8px;
+    font-weight: bold;
+  }
